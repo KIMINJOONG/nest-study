@@ -22,14 +22,14 @@ describe('AppController (e2e)', () => {
       .expect('Welcome to my Movie API');
   });
 
-  describe('/moviies', () => {
+  describe('/movies', () => {
     it('GET', () => {
       return request(app.getHttpServer()).get('/movies').expect(200).expect([]);
     });
 
     it('POST', () => {
       return request(app.getHttpServer())
-        .post('movies')
+        .post('/movies')
         .send({ title: 'test', year: 2000, genres: ['test'] })
         .expect(201);
     });
